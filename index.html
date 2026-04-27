@@ -2,12 +2,13 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Matrimonio Davide & Tiziana</title>
 
 <style>
 body {
   margin:0;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   background:#f5f1ed;
   display:flex;
   justify-content:center;
@@ -15,46 +16,62 @@ body {
   height:100vh;
 }
 
+/* BUSTA */
 .envelope {
   position:relative;
-  width:300px;
+  width:320px;
   height:200px;
   background:#800020;
   cursor:pointer;
+  border-radius:8px;
   overflow:hidden;
 }
 
+/* FLAP */
 .flap {
   position:absolute;
   width:0;
   height:0;
-  border-left:150px solid transparent;
-  border-right:150px solid transparent;
+  border-left:160px solid transparent;
+  border-right:160px solid transparent;
   border-bottom:100px solid #5a0015;
   top:0;
   transform-origin:top;
   transition:0.6s;
+  z-index:2;
 }
 
+/* LETTERA */
 .letter {
   position:absolute;
   width:90%;
-  height:160px;
   background:white;
   top:30px;
   left:5%;
   padding:15px;
   text-align:center;
-  transform:translateY(100px);
+  border-radius:8px;
+  transform:translateY(120px);
   transition:0.6s;
+  z-index:1;
 }
 
+.letter h2 {
+  margin:5px 0;
+  color:#800020;
+}
+
+.letter p {
+  margin:5px 0;
+}
+
+/* ANIMAZIONE */
 .open .flap {
   transform:rotateX(180deg);
 }
 
 .open .letter {
-  transform:translateY(-80px);
+  transform:translateY(-40px);
 }
 </style>
 </head>
@@ -67,6 +84,7 @@ body {
     <h2>Davide & Tiziana</h2>
     <p>22 Agosto 2026</p>
     <p>Agriturismo La Moglietta</p>
+    <p style="font-size:12px;">(tocca la busta)</p>
   </div>
 </div>
 
